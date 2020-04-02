@@ -1,0 +1,2 @@
+# Portofolio
+Django—an open-source web framework that's designed on top of Python—can help me quickly bring my website ideas to life. In this course, I am learning the basics of Django for web development by building my own website—a personal portfolio—from the ground up. Instructor Nick Walter steps through how to create a database, design the layout for your website, and add and update URL paths. I am learning how to connect Django project to Postgres, add static files and URLs, and more.

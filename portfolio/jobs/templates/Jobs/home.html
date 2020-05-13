@@ -34,6 +34,7 @@
           <div class="row">
             {% for job in jobs.all %}
             <div class="col-md-4">
+
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" src="{{job.Image.url}}">
                 <div class="card-body">
@@ -42,6 +43,7 @@
 
                   </div>
                 </div>
+            
               </div>
                 {% endfor %}
             </div>

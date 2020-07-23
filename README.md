@@ -12,9 +12,17 @@ In this course, I am learning the basics of Django for web development by buildi
 
 # sCam notes
 
+## Running the project locally
+
 To run the project, you need to set up the environment variables, which can do locally by sourcing the init shell file. You'll need to copy the `init_template.sh` file and add some values if you have not already done this.
 
 ```
 cd portfolio
 source init.sh
 ```
+
+## Deployment
+
+Project is hosted on Heroku, currently in sCam's account which Em is added as a collaborator to. If you're setting up a new instance of the project on your computer, you can add the exisiting Heroku remote by running:
+
+`heroku git:remote -a portfoilioem`

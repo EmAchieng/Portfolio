@@ -26,3 +26,11 @@ source init.sh
 Project is hosted on Heroku, currently in sCam's account which Em is added as a collaborator to. If you're setting up a new instance of the project on your computer, you can add the exisiting Heroku remote by running:
 
 `heroku git:remote -a portfoilioem`
+
+To deploy the project, just push your local master branch to the `heroku` remote:
+
+`git push heroku master -f`
+
+The force flag is used just in case things have slipped out of sync.
+
+Remember to set a value for `SECRET_KEY` in the Heroku settings / config vars part of the web interface.

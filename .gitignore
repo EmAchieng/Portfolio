@@ -1,2 +1,4 @@
 /Exercise Files
 /myvenv
+*.pyc
+.DS_Store

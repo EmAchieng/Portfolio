@@ -28,9 +28,13 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 ENV = os.environ["ENV"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+if ENV == "local":
+    DEBUG = True
+    ALLOWED_HOSTS = ["*"]
+else:
+    DEBUG = False
+    ALLOWED_HOSTS = ["portfoilioem.herokuapp.com"]
 
 
 # Application definition

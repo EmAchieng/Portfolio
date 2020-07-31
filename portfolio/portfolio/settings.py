@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # sCam : We pass this in from the outside environment, which means we don't have to include sensitive
 # credentials and so on in version control
 SECRET_KEY = os.environ["SECRET_KEY"]
+ENV = os.environ["ENV"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,16 +77,25 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "portfoliodb",
-        "USER": "postgres",
-        "PASSWORD": "django123",
-        "HOST": "localhost",
-        "PORT": "5432",
+
+if ENV == "local":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "portfoliodb",
+            "USER": "postgres",
+            "PASSWORD": "django123",
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
+    }
 
 
 # Password validation

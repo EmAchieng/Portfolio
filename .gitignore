@@ -3,3 +3,4 @@
 *.pyc
 .DS_Store
 /portfolio/init.sh
+/portfolio/db.sqlite3

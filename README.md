@@ -10,6 +10,24 @@ In this course, I am learning the basics of Django for web development by buildi
 - Creating object views
 - Updating URL paths
 
+# App Deployment on Heroku
+This app will run in multiple environments, locally and in production with Heroku using config vars
+
+```
+heroku config
+```
+
+```
+heroku config:get GITHUB_USERNAME
+```
+
+```
+heroku config:set GITHUB_USERNAME=xxxxxxx
+```
+
+PS: Heroku Dashboard can also edit the config vars
+
+
 # sCam notes
 
 ## Running the project locally

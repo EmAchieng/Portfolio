@@ -9,10 +9,17 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+import environ
 import os
 
 import dj_database_url
+
+env = environ.Env(
+# set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,8 +31,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # sCam : We pass this in from the outside environment, which means we don't have to include sensitive
 # credentials and so on in version control
-SECRET_KEY = os.environ["SECRET_KEY"]
-ENV = os.environ["ENV"]
+SECRET_KEY = env("SECRET_KEY")
+ENV = env("ENV")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
